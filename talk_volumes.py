@@ -1,8 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import backtrader as bt
-from sklearn.preprocessing import MinMaxScaler
 from talib import SMA
 
 files = [\
@@ -20,11 +18,6 @@ for file in files:
 
 
 data = pd.concat(datasets, axis=1).fillna(0)
-
-# scaler = MinMaxScaler()
-# norm_data = scaler.fit_transform(data)
-# norm_data = pd.DataFrame(norm_data, columns=['volume_bitcoin_norm', 'volume_ethereum_norm', 'volume_ripple_norm'], index=data.index)
-# data = pd.concat([data, norm_data], axis=1)
 
 long_period = 20
 short_period = 7
